@@ -1,0 +1,14 @@
+<mat-card class="mb-4">
+    <mat-card-header>
+        <mat-card-title>
+            <i class="fa-solid fa-2x fa-vr-cardboard"></i> {{postobj.title}}
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        {{postobj.body}}
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onedit()">Edit</button>
+        <button mat-raised-button color="warn" class="float-right" (click)="ondelete()">Delete</button>
+    </mat-card-actions>
+</mat-card>

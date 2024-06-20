@@ -1,0 +1,21 @@
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="postform" (ngSubmit)="onpostadd()">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" formControlName="title">
+            </div>
+            <div class="form-group">
+                <label for="title">content</label>
+                <textarea type="text" rows="4" class="form-control" formControlName="body"></textarea>
+            </div>
+
+            <select class="form-control mb-4" formControlName="userId">
+                <option [value]="skill" *ngFor="let skill of [1,2,3,4,5,6,7,8,]">{{skill}}</option>
+            </select>
+            <button mat-raised-button color="primary" type="submit" *ngIf="!iseditmode" [disabled]="postform.invalid" 
+             class="float-right">Add post</button>
+            <button mat-raised-button color="primary" type="button" *ngIf="iseditmode" [disabled]="postform.invalid" (click)="update()"  class="float-right">update</button>
+        </form>
+    </div>
+</div>
